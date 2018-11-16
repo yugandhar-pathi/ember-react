@@ -1,14 +1,12 @@
-import Component from '@ember/component';
-import ReactDOM from 'react-dom';
-
+import Component from "@ember/component";
+import ReactDOM from "react-dom";
 
 export default Component.extend({
-
   /**
    * We don't need a template since we're only creating a
    * wrapper for our React component
    **/
-  layout: '',
+  layout: "",
 
   /**
    * Renders a react component as the current ember element
@@ -34,5 +32,4 @@ export default Component.extend({
     this._super();
     this.unmountReactElement();
   }
-
 });

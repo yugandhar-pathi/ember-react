@@ -54,6 +54,8 @@
     "ember-cli-react": "^1.0.2",
     "highcharts-react-official": "^1.5.2",
     "react": "^16.6.1",
-    "react-dom": "^16.6.1"
+    "react-dom": "^16.6.1",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1"
   }
 }

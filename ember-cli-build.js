@@ -44,16 +44,31 @@ module.exports = function(defaults) {
     }]
   });
 
-  // app.import( 'node_modules/highcharts-react-official/src/HighchartsReact.js',{
-  //   using : [ {
-  //     transformation: 'amd',
-  //     as : 'HighchartsReact'
-  //   }]
-  // });
+  app.import( 'node_modules/redux/dist/redux.js',{
+    using : [ {
+      transformation: 'amd',
+      as : 'redux'
+    }]
+  });
+
+  app.import( 'node_modules/react-redux/dist/react-redux.js',{
+    using : [ {
+      transformation: 'amd',
+      as : 'react-redux'
+    }]
+  });
+
+  app.import( 'node_modules/highcharts-react-official/dist/highcharts-react.js',{
+    using : [ {
+      transformation: 'amd',
+      as : 'highcharts-react-official'
+    }]
+  });
   //app.import('node_modules/highcharts-react-official/src/HighchartsReact.js');
 
   app.import('vendor/shims/react.js');
   app.import('vendor/shims/react-dom.js');
+
   //app.import('vendor/shims/highcharts-react.js');
 
   return app.toTree();
