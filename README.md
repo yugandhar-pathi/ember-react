@@ -21,14 +21,12 @@ You will need the following things properly installed on your computer.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
-
-##Steps followed
+## Steps followed
 
 1. Create a new Ember app.
 2. npm install React and ReactDOM
 3. Install highcharts — npm install highcharts-react-official
-4. Install — npm install --save-dev babel-plugin-transform-class-properties babel-plugin-transform-react-jsx
+4. Install plugins — npm install --save-dev babel-plugin-transform-class-properties babel-plugin-transform-react-jsx
 5. Add babel plugins in ember-cli-build.js
 6. Update ember-cli-build file to include development and production.
 7. Add es lint for react - npm install --save-dev eslint-plugin-babel eslint-plugin-react   babel-eslint
