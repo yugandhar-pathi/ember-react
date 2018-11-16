@@ -1,8 +1,4 @@
 # ember-react
-<<<<<<< HEAD
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
 
 ## Prerequisites
 
@@ -27,7 +23,17 @@ You will need the following things properly installed on your computer.
 
 ### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
+##Steps followed
+
+1. Create a new Ember app.
+2. npm install React and ReactDOM
+3. Install highcharts — npm install highcharts-react-official
+4. Install — npm install --save-dev babel-plugin-transform-class-properties babel-plugin-transform-react-jsx
+5. Add babel plugins in ember-cli-build.js
+6. Update ember-cli-build file to include development and production.
+7. Add es lint for react - npm install --save-dev eslint-plugin-babel eslint-plugin-react   babel-eslint
+8. Generate vendor shim for react and reactdom
+9. Add them to ember-cli-build.js
 
 ### Running Tests
 
@@ -55,6 +61,4 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-=======
 render react components in ember
->>>>>>> 8ebaf7ac71aaeaa0e9a1009e2489455b7fae13a3
