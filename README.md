@@ -32,7 +32,7 @@ ember new ember-test
 2. To render React components,of course you need React and ReactDOM. Go ahead and install.
 
 ```
-   npm install --save react react-dom
+npm install --save react react-dom
 ```
 
 3. Tell Ember to include both of this libraries in the build. Add below lines of code in your ember-cli-build.js file (check this project for reference).
@@ -51,7 +51,7 @@ app.import({
 
 4. Go to your components folder and add one sample react component (say sample-react.jsx)
 
-````
+```
 import React from "react";
 
 class Samplereact extends React.Component {
@@ -72,6 +72,7 @@ class Samplereact extends React.Component {
    ```
     npm install --save-dev babel-plugin-transform-class-properties babel-plugin-transform-react-jsx
    ```
+
    After you install this configure your app to use them.
 
    ```
@@ -85,12 +86,15 @@ class Samplereact extends React.Component {
         }
     });
    ```
+
 6. So we are all set, you will observe that your app will run fine now but your eslint will complain about jsx code. Let's resolve that as well.
 
 ```
   npm install --save-dev eslint-plugin-babel eslint-plugin-react babel-eslint
 ```
+
 Once this is done make following changes to your .eslintrc.js file.
+
 ```
   + parser: 'babel-eslint',
     parserOptions: {
@@ -112,8 +116,10 @@ Once this is done make following changes to your .eslintrc.js file.
   +    'react/jsx-uses-vars': 'error',
    },
 ```
+
 6. You are all set now to use React component. But one last step .. the way you inject components into ember templates is different from React. Ember uses {{sample-comp}} where as React uses <SampleComp>.
-To fill this gap, let's use ember-cli-react
+   To fill this gap, let's use ember-cli-react
+
 ```
   npm install ember-cli-react
 ```
@@ -126,15 +132,18 @@ After you do this go to your app/resolver.js file and change contents to
   export default Resolver;
 
 ```
+
 7. Now you are all set, just go to application.hbs file and write ...{{sample-react}} You will see the react component in your Ember app!!
 
 ## Follow below steps to add React Highchart to your ember app.
+
 1. Install highcharts
+
 ```
   npm install highcharts-react-official
 ```
-2. Update ember-cli-build file to include highcharts.
 
+2. Update ember-cli-build file to include highcharts.
 
 ## Running Tests
 
@@ -163,4 +172,7 @@ Specify what it takes to deploy your app.
   - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
     render react components in ember
-````
+
+```
+
+```
