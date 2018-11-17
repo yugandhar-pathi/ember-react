@@ -21,7 +21,7 @@ You will need the following things properly installed on your computer.
 - Visit your app at [http://localhost:4200](http://localhost:4200).
 - Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-## Follow below steps to render React components in ember
+## 6 steps to render React components in ember
 
 1. Create a new Ember app, of course you need one to integrate React component.
 
@@ -37,17 +37,17 @@ npm install --save react react-dom
 
 3. Tell Ember to include both of this libraries in the build. Add below lines of code in your ember-cli-build.js file (check this project for reference).
 
-```
-app.import({
-  development: 'node_modules/react/umd/react.development.js',
-  production: 'node_modules/react/umd/react.production.min.js'
-});
+   ```
+   app.import({
+     development: 'node_modules/react/umd/react.development.js',
+     production: 'node_modules/react/umd/react.production.min.js'
+   });
 
-app.import({
-  development: 'node_modules/react-dom/umd/react-dom.development.js',
-  production: 'node_modules/react-dom/umd/react-dom.production.min.js'
-});
-```
+   app.import({
+     development: 'node_modules/react-dom/umd/react-dom.development.js',
+     production: 'node_modules/react-dom/umd/react-dom.production.min.js'
+   });
+   ```
 
 4. Go to your components folder and add one sample react component (say sample-react.jsx)
 
@@ -117,7 +117,7 @@ Once this is done make following changes to your .eslintrc.js file.
    },
 ```
 
-6. You are all set now to use React component. But one last step .. the way you inject components into ember templates is different from React. Ember uses {{sample-comp}} where as React uses <SampleComp>.
+6. You are all set now to use React component. But one last step .. the way you inject components into ember is different from React. Ember uses {{sample-comp}} where as React uses `<SampleComp>`.
    To fill this gap, let's use ember-cli-react
 
 ```
