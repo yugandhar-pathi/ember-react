@@ -137,13 +137,66 @@ Now you are all set, just go to application.hbs file and write ...{{sample-react
 
 ## Follow below steps to add React Highchart to your ember app.
 
-1. Install highcharts
+1. Install highcharts and react highcharts
 
 ```
-  npm install highcharts-react-official
+  npm install --save highcharts highcharts-react-official
 ```
 
-2. Update ember-cli-build file to include highcharts.
+2. Update ember-cli-build.js file to include highcharts.
+
+```
+  app.import("node_modules/highcharts/highcharts.js", {
+    using: [
+      {
+        transformation: "amd",
+        as: "highcharts"
+      }
+    ]
+  });
+
+  app.import("node_modules/highcharts-react-official/dist/highcharts-react.js", {
+    using: [
+      {
+        transformation: "amd",
+        as: "highcharts-react-official"
+      }
+    ]
+  });
+
+```
+
+3. Rest is as usual, you can just import highcharts and start using them.
+
+```
+  import React from "react";
+  import Highcharts from "highcharts";
+  import HighchartsReact from "highcharts-react-official";
+
+  const options = {
+    title: {
+      text: "High Chart"
+    },
+    series: [
+      {
+        data: [1, 2, 3]
+      }
+    ]
+  };
+
+  export default class SampleHighchart extends React.Component {
+    render() {
+      return (
+        <div>
+          <p>This is a React high chart component</p>
+          <HighchartsReact highcharts={Highcharts} options={options} />
+        </div>
+      );
+    }
+  }
+
+
+```
 
 ## Running Tests
 
