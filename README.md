@@ -133,7 +133,7 @@ After you do this go to your app/resolver.js file and change contents to
 
 ```
 
-7. Now you are all set, just go to application.hbs file and write ...{{sample-react}} You will see the react component in your Ember app!!
+Now you are all set, just go to application.hbs file and write ...{{sample-react}} You will see the react component in your Ember app!!
 
 ## Follow below steps to add React Highchart to your ember app.
 
