@@ -23,19 +23,19 @@ You will need the following things properly installed on your computer.
 
 ## 6 steps to render React components in ember
 
-1. Create a new Ember app, of course you need one to integrate React component.
+prerequisite : ember cli is installed and you have created a new ember app.
 
 ```
 ember new ember-test
 ```
 
-2. To render React components,of course you need React and ReactDOM. Go ahead and install.
+1. To render React components,of course you need React and ReactDOM. Go ahead and install.
 
 ```
 npm install --save react react-dom
 ```
 
-3. Tell Ember to include both of this libraries in the build. Add below lines of code in your ember-cli-build.js file (check this project for reference).
+2. Tell Ember to include both of this libraries in the build. Add below lines of code in your ember-cli-build.js file (check this project for reference).
 
 ```
 app.import({
@@ -49,12 +49,12 @@ app.import({
 });
 ```
 
-4. Go to your components folder and add one sample react component (say sample-react.jsx)
+3. Go to your components folder and add one sample react component (say sample-react.jsx)
 
 ```
 import React from "react";
 
-class Samplereact extends React.Component {
+class SampleReact extends React.Component {
   render() {
     return (
       <div>
@@ -65,7 +65,7 @@ class Samplereact extends React.Component {
 }
 ```
 
-5. The moment ember sees JSX code it will warn you --- Dang! Looks like a Build Error.
+4. The moment ember sees JSX code it will warn you --- Dang! Looks like a Build Error.
    Ahh !! some foreign lang ??
    Let's teach Ember to understand this JSX code.
 
@@ -87,7 +87,7 @@ let app = new EmberApp(defaults, {
 });
 ```
 
-6. So we are all set, you will observe that your app will run fine now but your eslint will complain about jsx code. Let's resolve that as well.
+5. We are all set with the app now, but your eslint will complain about jsx code. Let's educate eslint as well.
 
 ```
 npm install --save-dev eslint-plugin-babel eslint-plugin-react babel-eslint
