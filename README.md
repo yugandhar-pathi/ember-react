@@ -37,17 +37,17 @@ npm install --save react react-dom
 
 3. Tell Ember to include both of this libraries in the build. Add below lines of code in your ember-cli-build.js file (check this project for reference).
 
-   ```
-   app.import({
-     development: 'node_modules/react/umd/react.development.js',
-     production: 'node_modules/react/umd/react.production.min.js'
-   });
+```
+app.import({
+  development: 'node_modules/react/umd/react.development.js',
+  production: 'node_modules/react/umd/react.production.min.js'
+});
 
-   app.import({
-     development: 'node_modules/react-dom/umd/react-dom.development.js',
-     production: 'node_modules/react-dom/umd/react-dom.production.min.js'
-   });
-   ```
+app.import({
+  development: 'node_modules/react-dom/umd/react-dom.development.js',
+  production: 'node_modules/react-dom/umd/react-dom.production.min.js'
+});
+```
 
 4. Go to your components folder and add one sample react component (say sample-react.jsx)
 
@@ -69,28 +69,28 @@ class Samplereact extends React.Component {
    Ahh !! some foreign lang ??
    Let's teach Ember to understand this JSX code.
 
-   ```
-    npm install --save-dev babel-plugin-transform-class-properties babel-plugin-transform-react-jsx
-   ```
+```
+npm install --save-dev babel-plugin-transform-class-properties babel-plugin-transform-react-jsx
+```
 
-   After you install this configure your app to use them.
+After you install this configure your app to use them.
 
-   ```
-    let app = new EmberApp(defaults, {
-      // Add options here
-      babel: {
-          plugins: [
-          'transform-class-properties',
-          'transform-react-jsx',
-          ]
-        }
-    });
-   ```
+```
+let app = new EmberApp(defaults, {
+  // Add options here
+  babel: {
+      plugins: [
+      'transform-class-properties',
+      'transform-react-jsx',
+      ]
+    }
+});
+```
 
 6. So we are all set, you will observe that your app will run fine now but your eslint will complain about jsx code. Let's resolve that as well.
 
 ```
-  npm install --save-dev eslint-plugin-babel eslint-plugin-react babel-eslint
+npm install --save-dev eslint-plugin-babel eslint-plugin-react babel-eslint
 ```
 
 Once this is done make following changes to your .eslintrc.js file.
@@ -121,15 +121,15 @@ Once this is done make following changes to your .eslintrc.js file.
    To fill this gap, let's use ember-cli-react
 
 ```
-  npm install ember-cli-react
+npm install ember-cli-react
 ```
 
 After you do this go to your app/resolver.js file and change contents to
 
 ```
-  import Resolver from 'ember-cli-react/resolver';
+import Resolver from 'ember-cli-react/resolver';
 
-  export default Resolver;
+export default Resolver;
 
 ```
 
