@@ -9,11 +9,17 @@ export default Component.extend({
   layout: "",
 
   /**
+   * Element on which react component is rendered
+   */
+  id: "",
+
+  /**
    * Renders a react component as the current ember element
    * @param {React.Component} reactComponent. e.g., <HelloWorld />
    */
-  reactRender(reactComponent) {
-    ReactDOM.render(reactComponent, this.element);
+  reactRender(reactComponent, id) {
+    this.id = id;
+    ReactDOM.render(reactComponent, document.getElementById(id));
   },
 
   /**
@@ -21,7 +27,7 @@ export default Component.extend({
    * cleans up its event handlers and state.
    */
   unmountReactElement() {
-    ReactDOM.unmountComponentAtNode(this.element);
+    ReactDOM.unmountComponentAtNode(document.getElementById(this.id));
   },
 
   /**

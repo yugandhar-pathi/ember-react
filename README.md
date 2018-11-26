@@ -49,7 +49,7 @@ app.import({
 });
 ```
 
-3. Go to your components folder and add one sample react component (say sample-react.jsx)
+3. Go to your components folder and add one sample react component (say SampleReactComp.js)
 
 ```
 import React from "react";
@@ -73,7 +73,7 @@ class SampleReact extends React.Component {
 npm install --save-dev babel-plugin-transform-class-properties babel-plugin-transform-react-jsx
 ```
 
-After you install this configure your app to use them.
+After you install, configure your app to use them.
 
 ```
 let app = new EmberApp(defaults, {
@@ -117,8 +117,87 @@ Once this is done make following changes to your .eslintrc.js file.
    },
 ```
 
-6. You are all set now to use React component. But one last step .. the way you inject components into ember is different from React. Ember uses {{sample-comp}} where as React uses `<SampleComp>`.
-   To fill this gap, let's use ember-cli-react
+6. Now our ember app is comfortable with React code. We will go ahead and use our React Component in the Ember.
+   We can deal with this in 2 ways. We will write a wrapper for React component and render or we will use 3rd party library to do this work for you. Let's see both options.
+
+a) Wrapper for React Component.
+
+```
+// ReactWrapper.js
+import Component from "@ember/component";
+import ReactDOM from "react-dom";
+
+export default Component.extend({
+  /**
+   * We don't need a template since we're only creating a
+   * wrapper for our React component
+   **/
+  layout: "",
+
+  /**
+   * Element on which react component is rendered
+   */
+  id: "",
+
+  /**
+   * Renders a react component as the current ember element
+   * @param {React.Component} reactComponent. e.g., <HelloWorld />
+   */
+  reactRender(reactComponent, id) {
+    this.id = id;
+    ReactDOM.render(reactComponent, document.getElementById(id));
+  },
+
+  /**
+   * Removes a mounted React component from the DOM and
+   * cleans up its event handlers and state.
+   */
+  unmountReactElement() {
+    ReactDOM.unmountComponentAtNode(document.getElementById(this.id));
+  },
+
+  /**
+   * Cleans up the rendered react component as the ember
+   * component gets destroyed
+   */
+  willDestroyComponent() {
+    this._super();
+    this.unmountReactElement();
+  }
+});
+```
+
+Extend your Ember Component from ReactWrapper and render the React component in life cycle hook - didInsertElement.
+
+```
+import ReactWrapper from "../reactwrapper/ReactWrapper";
+import SampleReactComp from "./SampleReactComp";
+import { inject as service } from "@ember/service";
+
+export default ReactWrapper.extend({
+  router: service(),
+
+  didReceiveAttrs() {
+    this._super(...arguments);
+  },
+
+  didInsertElement() {
+    this._super(...arguments);
+    this.reactRender(
+      <SampleReactComp
+        options={this.options}
+        router={this.router}
+        sampleCallBack={this.onSampleCallBack}
+      />,
+      "reactPlaceHolder"
+    );
+  }
+});
+
+```
+
+b) We will see how to use 3rd party library(ember-cli-react). To render Components Ember uses {{sample-comp}} where as React uses `<SampleComp>`.
+To fill this gap, let's use ember-cli-react
 
 ```
 npm install ember-cli-react
