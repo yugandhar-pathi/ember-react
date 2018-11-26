@@ -196,8 +196,7 @@ export default ReactWrapper.extend({
 
 ```
 
-b) We will see how to use 3rd party library(ember-cli-react). To render Components Ember uses {{sample-comp}} where as React uses `<SampleComp>`.
-To fill this gap, let's use ember-cli-react
+b) We will see how to use 3rd party library(ember-cli-react). This will help us to avoid inheriting from ReactWrapper to render React components.
 
 ```
 npm install ember-cli-react
@@ -211,6 +210,8 @@ import Resolver from 'ember-cli-react/resolver';
 export default Resolver;
 
 ```
+
+Note : This library is in development stage. As of now it only renders react components in `.jsx` extension. To try this options write your react component as sample-react.jsx
 
 Now you are all set, just go to application.hbs file and write ...{{sample-react}} You will see the react component in your Ember app!!
 
