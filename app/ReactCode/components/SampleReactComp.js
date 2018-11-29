@@ -22,24 +22,37 @@ class SampleReactComp extends React.Component {
   }
 
   render() {
+    const displayInline = { display: "inline" };
     return (
       <div style={{ border: "1px solid black", borderRadius: "5px" }}>
         <h3>React Component</h3>
-        <p>Calling Ember route in React Component.</p>
-        <input type="button" value="Logout" onClick={this.onLogout} />
-        <p>Callback to Ember</p>
-        <input
-          type="button"
-          value="TriggerCallback"
-          onClick={this.props.sampleCallBack}
-        />
-        <p>Integrate Redux, Initial state : {this.props.storeState} </p>
-        <input
-          type="button"
-          value="Increment State"
-          onClick={this.props.increment}
-        />
-        <h4>Render highcharts</h4>
+        <ul>
+          <li>
+            <p style={displayInline}>
+              Calling Ember route in React Component -->{" "}
+            </p>
+            <input type="button" value="Logout" onClick={this.onLogout} />
+          </li>
+          <li>
+            <p style={displayInline}>Callback to Ember --> </p>
+            <input
+              type="button"
+              value="TriggerCallback"
+              onClick={this.props.sampleCallBack}
+            />
+          </li>
+          <li>
+            <p style={displayInline}>
+              Integrate Redux, Initial state : {this.props.storeState}{" "}
+            </p>
+            <input
+              type="button"
+              value="Increment State"
+              onClick={this.props.increment}
+            />
+          </li>
+        </ul>
+        <h4>Render highcharts(Data is from Ember)</h4>
         <HighchartsReact highcharts={Highcharts} options={this.props.options} />
       </div>
     );
