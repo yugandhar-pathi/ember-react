@@ -1,16 +1,13 @@
-'use strict';
+"use strict";
 
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
     babel: {
-        plugins: [
-        'transform-class-properties',
-        'transform-react-jsx',
-        ]
-      }
+      plugins: ["transform-class-properties", "transform-react-jsx"]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -27,47 +24,58 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import({
-    development: 'node_modules/react/umd/react.development.js',
-    production: 'node_modules/react/umd/react.production.min.js'
+    development: "node_modules/react/umd/react.development.js",
+    production: "node_modules/react/umd/react.production.min.js"
   });
-  
+
   app.import({
-    development: 'node_modules/react-dom/umd/react-dom.development.js',
-    production: 'node_modules/react-dom/umd/react-dom.production.min.js'
+    development: "node_modules/react-dom/umd/react-dom.development.js",
+    production: "node_modules/react-dom/umd/react-dom.production.min.js"
   });
 
   //import highcharts
-  app.import( 'node_modules/highcharts/highcharts.js',{
-    using : [ {
-      transformation: 'amd',
-      as : 'highcharts'
-    }]
+  app.import("node_modules/highcharts/highcharts.js", {
+    using: [
+      {
+        transformation: "amd",
+        as: "highcharts"
+      }
+    ]
   });
 
-  app.import( 'node_modules/redux/dist/redux.js',{
-    using : [ {
-      transformation: 'amd',
-      as : 'redux'
-    }]
+  app.import("node_modules/redux/dist/redux.js", {
+    using: [
+      {
+        transformation: "amd",
+        as: "redux"
+      }
+    ]
   });
 
-  app.import( 'node_modules/react-redux/dist/react-redux.js',{
-    using : [ {
-      transformation: 'amd',
-      as : 'react-redux'
-    }]
+  app.import("node_modules/react-redux/dist/react-redux.js", {
+    using: [
+      {
+        transformation: "amd",
+        as: "react-redux"
+      }
+    ]
   });
 
-  app.import( 'node_modules/highcharts-react-official/dist/highcharts-react.js',{
-    using : [ {
-      transformation: 'amd',
-      as : 'highcharts-react-official'
-    }]
-  });
+  app.import(
+    "node_modules/highcharts-react-official/dist/highcharts-react.js",
+    {
+      using: [
+        {
+          transformation: "amd",
+          as: "highcharts-react-official"
+        }
+      ]
+    }
+  );
   //app.import('node_modules/highcharts-react-official/src/HighchartsReact.js');
 
-  app.import('vendor/shims/react.js');
-  app.import('vendor/shims/react-dom.js');
+  // app.import('vendor/shims/react.js');
+  // app.import('vendor/shims/react-dom.js');
 
   //app.import('vendor/shims/highcharts-react.js');
 
