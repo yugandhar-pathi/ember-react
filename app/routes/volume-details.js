@@ -6,6 +6,7 @@ export default Route.extend({
   },
   actions: {
     backToVolumeList: function() {
+      console.log("reach action method");
       this.transitionTo("home-route");
     }
   }
