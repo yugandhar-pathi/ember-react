@@ -1,12 +1,13 @@
 import * as types from "../actions/types";
 
-export const volumes = function(state = {}, action) {
+const volumes = (state = {}, action) => {
   switch (action.type) {
     case types.SET_VOLUME_LIST: {
-      state = action.volumes;
-      return state;
+      return action.volumes;
     }
     default:
-      return {};
+      return state;
   }
 };
+
+export default volumes;

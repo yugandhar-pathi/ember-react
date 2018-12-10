@@ -3,12 +3,6 @@ import ReactDOM from "react-dom";
 
 export default Component.extend({
   /**
-   * We don't need a template since we're only creating a
-   * wrapper for our React component
-   **/
-  layout: "",
-
-  /**
    * Element on which react component is rendered
    */
   id: "",

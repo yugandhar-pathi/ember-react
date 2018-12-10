@@ -1,5 +1,6 @@
 <p>This is home route</p>
+<p>Values From ember Data:</p>
 <p>{{welcomeNote}}</p>
+{{#if showCallBack}}
 <p id="callbackDiv">Callback div</p>
-{{#link-to "volume-dashboard"}}VolumeDashBoard{{/link-to}} {{ember-component options=model.options onSampleCallBack=(action
-"sampleCallback")}}
+{{/if}} {{ember-component options=options onSampleCallBack=(action "sampleCallback")}}

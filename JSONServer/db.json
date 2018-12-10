@@ -1,0 +1,19 @@
+{
+  "volumes": [
+    { "title": "volume1", "agenttype": "vvol", "volumesize": "100kb" },
+    { "title": "volume2", "agenttype": "vol", "volumesize": "200kb" },
+    { "title": "volume3", "agenttype": "vol", "volumesize": "300kb" },
+    { "title": "volume4", "agenttype": "vvol", "volumesize": "400kb" }
+  ],
+  "volume-details": {
+    "data": {
+      "type": "volume-details",
+      "id": 1,
+      "attributes": {
+        "title": "volume1",
+        "agenttype": "vvol",
+        "volumesize": "100kb"
+      }
+    }
+  }
+}
