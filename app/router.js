@@ -9,7 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route("home-route");
   this.route("login-route");
-  this.route("volume-details", { path: "volume-details/:volume-detail_id" });
+  this.route("volume-details", { path: "volume-details/:volumedetail_id" });
 });
 
 export default Router;

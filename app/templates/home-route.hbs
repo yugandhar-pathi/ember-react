@@ -3,4 +3,4 @@
 <p>{{welcomeNote}}</p>
 {{#if showCallBack}}
 <p id="callbackDiv">Callback div</p>
-{{/if}} {{ember-component options=options onSampleCallBack=(action "sampleCallback")}}
+{{/if}} {{ember-component options=model.options onSampleCallBack=(action "sampleCallback")}}

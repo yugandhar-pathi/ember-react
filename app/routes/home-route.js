@@ -1,16 +1,20 @@
 import Route from "@ember/routing/route";
 
 export default Route.extend({
-  // model() {
-  //   return this.store
-  //     .queryRecord("volume-detail", {})
-  //     .then(function(volumeDetail) {
-  //       return {
-  //         agenttype: volumeDetail.get("agenttype"),
-  //         volumesize: volumeDetail.get("volumesize")
-  //       };
-  //     });
-  // },
+  model() {
+    return {
+      options: {
+        title: {
+          text: "High Chart"
+        },
+        series: [
+          {
+            data: [1, 2, 3, 4, 5]
+          }
+        ]
+      }
+    };
+  },
 
   actions: {
     logout() {
