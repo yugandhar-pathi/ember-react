@@ -10,15 +10,7 @@ export default DS.JSONAPIAdapter.extend({
       ReduxStore.getVolumeDetails(id).then(
         function(data) {
           console.log("data from redux store" + JSON.stringify(data));
-          //resolve(data);
-          let volume_details = {
-            data: {
-              type: type.modelName,
-              id,
-              attributes: data
-            }
-          };
-          resolve(volume_details);
+          resolve(data);
         },
         function(jqXHR) {
           reject(jqXHR);
