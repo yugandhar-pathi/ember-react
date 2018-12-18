@@ -11,6 +11,7 @@ store.getVolumes = () => {
         resolve(volumes);
       })
       .catch(error => {
+        console.log(error);
         reject(error);
       });
   });
