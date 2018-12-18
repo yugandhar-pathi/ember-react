@@ -5,7 +5,7 @@ import ReduxStore from "../ReactCode/mystore/appstore";
 export default DS.JSONAPIAdapter.extend({
   host: "http://localhost:3000",
 
-  findRecord(store, type, id, snapshot) {
+  readVolumeDetails(store, type, id, snapshot) {
     return new RSVP.Promise(function(resolve, reject) {
       ReduxStore.getVolumeDetails(id).then(
         function(data) {
@@ -25,6 +25,12 @@ export default DS.JSONAPIAdapter.extend({
         }
       );
     });
+  },
+
+  findRecord(store, type, id, snapshot) {
+    if (type.modelName === "volume-detail") {
+      return this.readVolumeDetails(store, type, id, snapshot);
+    }
   },
   // store,type,sinceToken,snapshotRecordArray
   queryRecord(store, type, query) {

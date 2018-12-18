@@ -1,8 +1,9 @@
 import Route from "@ember/routing/route";
+import RSVP from "rsvp";
 
 export default Route.extend({
   model() {
-    return {
+    return RSVP.hash({
       options: {
         title: {
           text: "High Chart"
@@ -12,8 +13,9 @@ export default Route.extend({
             data: [1, 2, 3, 4, 5]
           }
         ]
-      }
-    };
+      },
+      userDetails: this.store.queryRecord("user-details", "admin")
+    });
   },
 
   actions: {
