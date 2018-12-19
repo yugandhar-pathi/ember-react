@@ -13,8 +13,19 @@ const volumeList = {
   ]
 };
 
-MockData.volumesList = RequestMock()
+const userDetails = {
+  url: "http://localhost:3000/user-details",
+  data: {
+    "username": "Test Pathi",
+    "arrays": "array1"
+  }
+}
+
+MockData = RequestMock()
   .onRequestTo(volumeList.url)
-  .respond(volumeList.data, 200, { "access-control-allow-origin": "*" });
+  .respond(volumeList.data, 200, { "access-control-allow-origin": "*" })
+  .onRequestTo(userDetails.url)
+  .respond(userDetails.data, 200, { "access-control-allow-origin": "*" });
+
 
 export default MockData;

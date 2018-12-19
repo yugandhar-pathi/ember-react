@@ -1,6 +1,6 @@
 <p>Login Page</p>
 <label>Username:</label>
-{{input type="text" value=Username placeholder="Username"}}
+{{input type="text" id="username" value=Username placeholder="Username"}}
 <label>Password:</label>
-{{input type="password" value=password placeholder="Password"}}
-<input type="button" value="Login" {{action "onLogin"}}/>
+{{input type="password" id="password" value=password placeholder="Password"}}
+<input type="button" id="login" value="Login" {{action "onLogin"}}/>
