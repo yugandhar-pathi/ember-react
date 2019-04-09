@@ -1,5 +1,5 @@
 import React from "react";
-import Highcharts from "highcharts";
+//import Highcharts from "Highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { connect } from "react-redux";
 import store from "../mystore/appstore";
