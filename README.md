@@ -37,6 +37,8 @@ npm install --save react react-dom
 
 2. Tell Ember to include both of this libraries in the build. Add below lines of code in your ember-cli-build.js file (check this project for reference).
 
+Note : As an alternative you can aslo install ember-auto-import (ember i ember-auto-import) which will help to import from npm packages directly.
+
 ```
 app.import({
   development: 'node_modules/react/umd/react.development.js',
